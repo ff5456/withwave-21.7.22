@@ -16,24 +16,15 @@ import pymysql
 
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 't2gzc-)vw$gidwv5+kp_0k^r91+#@*n0=yjh_3kkt5w8$6%0-c'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
 
 
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -86,8 +77,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 pymysql.version_info = (1, 4, 2, "final", 0)
 pymysql.install_as_MySQLdb()
@@ -103,8 +92,6 @@ DATABASES = {
 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -122,8 +109,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -136,9 +121,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
-
 
 
 AUTHENTICATION_BACKENDS = [
@@ -149,25 +131,6 @@ AUTHENTICATION_BACKENDS = [
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
-# AWS_ACCESS_KEY_ID='AKIAJOT3XHVK6RRMX5HQ'
-# AWS_SECRET_ACCESS_KEY='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'
-# AWS_REGION = 'ap-northeast-2'
-# AWS_STORAGE_BUCKET_NAME='withwaveshop'
-# AWS_S3_CUSTOM_DOMAIN = f's3.{AWS_REGION}.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}'
-#
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_S3_OBJECT_PARAMETERS = {
-#     'CacheControl':'max-age=86400',
-# }
-# AWS_DEFAULT_ACL = 'public-read'
-# AWS_LOCATION = ''
-#
-# STATIC_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}'
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# DEFAULT_FILE_STORAGE = 'config.s3media.MediaStorage'
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static')
-# ]
 STATIC_URL = '/static/'         #/static dir로 이동할 수 있음을 뜻한다
 
 MEDIA_URL = '/media/'
