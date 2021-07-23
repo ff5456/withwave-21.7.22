@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Search Page{% endblock %}
+{% block content %}
+
+<div xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+        <center>
+            {% if searched %}
+                <h1> You Searched For {{searched}}</h1></br>
+                {% for sp in searched_product %}
+                <div class="row">
+                    <div class="col-6">
+                        {% if sp.image %}<img src="{{sp.image.url}}" width="50%">{% endif %}
+                    </div>
+                    <div class="col">
+                        <h1 class="display-6"><a href="{{sp.get_absolute_url}}">{{sp.name}}</a></h1></br>
+                        <p><span class="display-10">Price:  {{sp.price}}  $</span></p>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <h1> Nothing searched..</h1>
+
+            {% endif %}
+
+        </center>
+    </div>
+
+{% endblock %}
